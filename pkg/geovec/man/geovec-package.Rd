@@ -1,6 +1,6 @@
-\name{gvector-package}
+\name{gevec-package}
 
-\alias{gvector}
+\alias{geovec}
 
 \docType{package}
 
@@ -10,7 +10,7 @@ Geographic Vector (points, lines, polygons) data manipulation
 
 \description{
 
-The gvector package has functions to manipulate geographic vector data. It builds on the functionality provided by the \code{rgeos} package. \code{rgeos} has functions to manipulate geometries ("spatial features"). \code{gvector} makes it easier to do for complex polygons with attribute data. Attribute data are kept, or combined.
+The \code{geovec} package has functions to manipulate geographic vector data. It builds on the functionality provided by the \code{rgeos} package. \code{rgeos} has functions to manipulate geometries ("spatial features"). \code{geovec} makes it easier to do for complex polygons with attribute data. Attribute data are kept, or combined. It might be that some of the functions will become obsolete as rgeos develops.
 
 
 Comparison of terminology for polygon manipulation methods used in ArcGIS and in this package (gvector)
