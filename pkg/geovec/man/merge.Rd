@@ -2,6 +2,7 @@
 
 \docType{methods}
 
+\alias{merge}
 \alias{merge,Spatial,data.frame-method}
 
 \title{ 

@@ -2,6 +2,7 @@
 
 \docType{methods}
 
+\alias{union}
 \alias{union,SpatialPolygons,SpatialPolygons-method}
 
 \title{ 

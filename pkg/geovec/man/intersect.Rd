@@ -2,6 +2,7 @@
 
 \docType{methods}
 
+\alias{intersect}
 \alias{intersect,SpatialPolygons,SpatialPolygons-method}
 
 \title{ 

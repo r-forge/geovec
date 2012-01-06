@@ -2,6 +2,7 @@
 
 \docType{methods}
 
+\alias{update}
 \alias{update,SpatialPolygons,SpatialPolygons-method}
 
 \title{ 

@@ -1,6 +1,6 @@
 \name{click}
-\alias{click}
 
+\alias{click}
 \alias{click,SpatialPolygons-method}
 \alias{click,SpatialLines-method}
 \alias{click,SpatialPoints-method}

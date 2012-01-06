@@ -1,6 +1,7 @@
 \name{voronoi}
 
 \Rdversion{1.1}
+
 \alias{voronoi}
 
 \title{
