@@ -11,7 +11,7 @@ Identity
 }
 
 \description{
-"identity" overlay of SpatialPolygonDataFrame objects. Areas of \code{x} that overlap with \code{y} are intersected with \code{y} and get the values of \code{y}. To replace rather than intersect, use \code{\link{update}}
+"identity" overlay of SpatialPolygonDataFrame objects. Areas of \code{x} that overlap with \code{y} are intersected with \code{y} and get the values of \code{y}. To replace rather than intersect, use \code{\link{update}}.
 }
 
 \usage{
