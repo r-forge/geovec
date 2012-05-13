@@ -18,14 +18,19 @@ function(x, ...) {
 		nn[i] <- length(p@Polygons)
 		if (nn[i] > 1) {
 			nms <- paste(names[i], 1:nn[i], sep='_')
-			p <- lapply(1:length(p@Polygons), function(i) Polygons(list(p@Polygons[[i]]), nms[i]))
+			holes <- sapply(1:length(p@Polygons), function(j) p@Polygons[[j]]@hole )
+			if (any(holes)) {
+				nn[i] <- 1
+			} else {
+				p <- lapply(1:length(p@Polygons), function(j) Polygons(list(p@Polygons[[j]]), nms[j]) )
+			}
 		} 
 		pp <- c(pp, p)
 		if (hasdf) {
-			df <- rbind(df, x@data[rep(i,nn[i]),])
+			df <- rbind(df, x@data[rep(i,nn[i]), ,drop=FALSE])
 		}
-
 	}
+
 	pp <- SpatialPolygons(pp)
 	pp@proj4string <- x@proj4string
 	if (hasdf) {
@@ -55,9 +60,8 @@ function(x, ...) {
 		} 
 		pp <- c(pp, p)
 		if (hasdf) {
-			df <- rbind(df, x@data[rep(i,nn[i]),])
+			df <- rbind(df, x@data[rep(i,nn[i]), ,drop=FALSE])
 		}
-
 	}
 	pp <- SpatialLines(pp)
 	pp@proj4string <- x@proj4string

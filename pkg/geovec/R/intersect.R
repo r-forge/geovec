@@ -84,3 +84,10 @@ function(x, y) {
 
 
 
+setMethod('intersect', signature(x='SpatialPoints', y='SpatialPolygons'), 
+function(x, y) {
+	i <- overlay(x, y)
+	w <- which(!is.na(i))
+	x[i,]
+}	
+)

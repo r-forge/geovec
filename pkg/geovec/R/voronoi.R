@@ -10,10 +10,13 @@ voronoi <- function(xy){
 	if (!require(deldir)) { stop('you need to first install the deldir libary') }
 
 	dat <- NULL
+	sp <- FALSE
 	if (inherits(xy, 'Spatial')) {
 		if (.hasSlot(xy, 'data')) {
 			dat <- slot(xy, 'data')
 		}
+		prj <- proj4string(xy)
+		sp <- TRUE
 		xy <- coordinates(xy)
 	}
 	
@@ -25,7 +28,11 @@ voronoi <- function(xy){
 		pcrds <- rbind(pcrds, pcrds[1,])
 		polys[[i]] <- Polygons(list(Polygon(pcrds)), as.character(i))
 	}
-	polys <- SpatialPolygons(polys)
+	if (sp) {
+		polys <- SpatialPolygons(polys, proj4string=CRS(prj))
+	} else {
+		polys <- SpatialPolygons(polys)
+	}
 	
 	if (is.null(dat)) {
 		dat <- data.frame(id=1:nrow(xy), xy)
