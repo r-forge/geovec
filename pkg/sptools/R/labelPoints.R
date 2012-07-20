@@ -2,16 +2,17 @@
 # author: Karl Ove Hufthammer 
 # http://r-sig-geo.2731867.n2.nabble.com/Better-label-placement-for-polygons-td7580550.html
 
-calc.labpt = function(pols) {
+labelPoints <- function(x) {
+
   # Prepopulate the label point matrix with the centroid values
-	coords <- coordinates(pols)
-	sarea <- sqrt(gArea(pols)/pi)/10
+	coords <- coordinates(x)
+	sarea <- sqrt(gArea(x)/pi)/10
 		
-  # For each polygon in pols, calculate the appropriate label point
-	for(i in seq_len(length(pols))) {
+  # For each polygon in x, calculate the appropriate label point
+	for(i in seq_len(length(x))) {
 
     # First fetch the polygon to process
-		p <- pols[i,]
+		p <- x[i,]
 
 		init <- 0             # Initial amount to shrink
 		estep <- sarea[i]     # Additional amount to shrink for each step
