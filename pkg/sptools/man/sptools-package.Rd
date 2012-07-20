@@ -1,19 +1,19 @@
-\name{geovec-package}
+\name{sptools-package}
 
-\alias{geovec}
+\alias{sptools}
 
 \docType{package}
 
 \title{ 
-Geographic Vector (points, lines, polygons) data manipulation
+Manipulation of geographic object data (points, lines, polygons) 
 }
 
 \description{
 
-The \code{geovec} package has functions to manipulate geographic vector data. It builds on the functionality provided by the \code{rgeos} package. \code{rgeos} has functions to manipulate geometries ("spatial features"). \code{geovec} makes it easier to do for complex polygons with attribute data. Attribute data are kept, or combined. It might be that some of these functions will become obsolete as rgeos develops.
+The \code{sptools} package has functions to manipulate geographic vector data. It builds on the functionality provided by the \code{rgeos} package. \code{rgeos} has functions to manipulate geometries ("spatial features"). \code{sptools} makes it easier to do for complex polygons with attribute data. Attribute data are kept, or combined. It might be that some of these functions will become obsolete as rgeos develops.
 
 
-Comparison of terminology for polygon manipulation methods used in ArcGIS and in this package (geovec)
+Comparison of terminology for polygon manipulation methods used in ArcGIS and in this package (sptools)
 
 \tabular{rll}{
   \tab \bold{ArcGIS}    \tab  \bold{raster} \cr

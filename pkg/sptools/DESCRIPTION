@@ -1,8 +1,8 @@
-Package: geovec
+Package: sptools
 Type: Package
-Title: Manipulation of geographic vector (points, lines, polygons) data
-Version: 0.1-0
-Date: 22-April-2012
+Title: Manipulation of geographic object data (points, lines, polygons)
+Version: 0.2-0
+Date: 19-July-2012
 Depends: methods, sp, raster, rgeos (>= 0.1-15), R (>= 2.11.0)
 Suggests: deldir, rgdal, XML
 Author: Robert J. Hijmans

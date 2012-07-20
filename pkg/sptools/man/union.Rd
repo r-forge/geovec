@@ -29,7 +29,7 @@ Spatial*
 \author{Robert J. Hijmans}
 
 \seealso{
-\code{\link[geovec]{merge}} for merging a data.frame with attributes of Spatial objects
+\code{\link[sptools]{merge}} for merging a data.frame with attributes of Spatial objects
 
 and \code{\link{+,SpatialPolygons,SpatialPolygons-method}} for an algebraic notation
 }
