@@ -3,7 +3,7 @@
 \docType{methods}
 
 \alias{update}
-\alias{update,SpatialPolygons,SpatialPolygons-method}
+\alias{update,SpatialPolygons-method}
 
 \title{ 
 Union Spatial* objects
@@ -14,7 +14,7 @@ Update Spatial* objects. Areas of \code{x} that overlap with \code{y} are replac
 }
 
 \usage{
-\S4method{update}{SpatialPolygons,SpatialPolygons}(object, ...)
+\S4method{update}{SpatialPolygons}(object, ...)
 }
 
 \arguments{

@@ -4,6 +4,11 @@
 # Licence GPL v3
 
 
+if (!isGeneric("disaggregate")) {
+	setGeneric("disaggregate", function(x, ...)
+		standardGeneric("disaggregate"))
+}
+
 setMethod('disaggregate', signature(x='SpatialPolygons'), 
 function(x, ...) {
 	n <- length(x@polygons)

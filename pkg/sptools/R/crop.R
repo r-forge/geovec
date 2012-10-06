@@ -3,6 +3,10 @@
 # Version 1.0
 # Licence GPL v3
 
+if (!isGeneric("crop")) {
+	setGeneric("crop", function(x, y, ...)
+		standardGeneric("crop"))
+}	
 
 setMethod('crop', signature(x='SpatialPolygons', y='ANY'), 
 	function(x, y, ...) {

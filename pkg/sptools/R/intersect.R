@@ -4,6 +4,20 @@
 # Licence GPL v3
 
 
+
+.trim <- function(x, ...) {
+	unlist(lapply(x, function(s) {	gsub('^[[:space:]]+', '',  gsub('[[:space:]]+$', '', s) ) }))
+}
+
+.goodNames <- function(ln, prefix='layer') {
+	ln <- .trim(as.character(ln))
+	ln[is.na(ln)] <- ""
+	ln[ln==''] <- prefix
+	ln <- make.names(ln, unique=FALSE)
+	.uniqueNames(ln)
+}
+
+
 	
 if (!isGeneric("intersect")) {
 	setGeneric("intersect", function(x, y)
@@ -34,7 +48,7 @@ function(x, y) {
 	ydata <- .hasSlot(y, 'data')
 	dat <- NULL
 	if (xdata & ydata) {
-		nms <- raster:::.goodNames(c(colnames(x@data), colnames(y@data)))
+		nms <- .goodNames(c(colnames(x@data), colnames(y@data)))
 		colnames(x@data) <- xnames <- nms[1:ncol(x@data)]
 		colnames(y@data) <- ynames <- nms[(ncol(x@data)+1):length(nms)]
 		dat <- cbind(x@data[NULL, ,drop=FALSE], y@data[NULL, ,drop=FALSE])

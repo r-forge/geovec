@@ -11,7 +11,7 @@ if (!isGeneric("xymean")) {
 
 setMethod("xymean", signature(x='SpatialPolygons'),
 	function(x, w=NULL){
-		if (isLonLat(x)) {
+		if (isTRUE(!is.projected(x))) {
 			.xymeanLL(coordinates(x), w=w)
 		} else {
 			.xymean(coordinates(x), w=w)
@@ -22,7 +22,7 @@ setMethod("xymean", signature(x='SpatialPolygons'),
 
 setMethod("xymean", signature(x='SpatialPoints'),
 	function(x, w=NULL){
-		if (isLonLat(x)) {
+		if (isTRUE(!is.projected(x))) {
 			.xymeanLL(coordinates(x), w=w)
 		} else {
 			.xymean(coordinates(x), w=w)
@@ -36,7 +36,7 @@ setMethod("xymean", signature(x='RasterLayer'),
 		if (is.null(w)) {
 			w <- getValues(x)
 		}
-		if (isLonLat(x)) {	
+		if (isTRUE(!is.projected(x))) {
 			.xymeanLL(coordinates(x), w=w)
 		} else {
 			.xymean(coordinates(x), w=w)
@@ -98,14 +98,18 @@ if (!isGeneric("xymedian")) {
 
 setMethod("xymedian", signature(x='SpatialPolygons'),
 	function(x, w=NULL, converge){
-		if (isLonLat(x)) {	warning('this function should only be used with planar coordinates') }
+		if (isTRUE(!is.projected(x))) {	
+			warning('this function should only be used with planar coordinates') 
+		}
 		.xymedian(coordinates(x), w=w, converge=converge)
 	}
 )	
 
 setMethod("xymedian", signature(x='SpatialPoints'),
 	function(x, w=NULL, converge){
-		if (isLonLat(x)) {	warning('this function should only be used with planar coordinates') }
+		if (isTRUE(!is.projected(x))) {
+			warning('this function should only be used with planar coordinates') 
+		}
 		.xymedian(coordinates(x), w=w, converge=converge)
 	}
 )	
@@ -113,7 +117,9 @@ setMethod("xymedian", signature(x='SpatialPoints'),
 
 setMethod("xymedian", signature(x='RasterLayer'),
 	function(x, w=NULL, converge){
-		if (isLonLat(x)) {	warning('this function should only be used with planar coordinates') }
+		if (isTRUE(!is.projected(x))) {	
+			warning('this function should only be used with planar coordinates') 
+		}
 		if (is.null(w)) {
 			w <- getValues(x)
 		}
@@ -167,7 +173,9 @@ if (!isGeneric("xyvar")) {
 
 setMethod("xyvar", signature(x='SpatialPolygons'),
 	function(x, simple=TRUE){
-		if (isLonLat(x)) {	warning('this function should only be used with planar coordinates') }
+		if (isTRUE(!is.projected(x))) {
+			warning('this function should only be used with planar coordinates') 
+		}
 		x <- coordinates(x)
 		.xyvar(x, simple=simple)
 	}
@@ -176,7 +184,9 @@ setMethod("xyvar", signature(x='SpatialPolygons'),
 
 setMethod("xyvar", signature(x='SpatialPoints'),
 	function(x, simple=TRUE){
-		if (isLonLat(x)) {	warning('this function should only be used with planar coordinates') }
+		if (isTRUE(!is.projected(x))) {
+			warning('this function should only be used with planar coordinates') 
+		}
 		.xyvar(coordinates(x), simple=simple)		
 	}
 )	

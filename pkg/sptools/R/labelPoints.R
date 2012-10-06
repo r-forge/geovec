@@ -2,7 +2,7 @@
 # author: Karl Ove Hufthammer 
 # http://r-sig-geo.2731867.n2.nabble.com/Better-label-placement-for-polygons-td7580550.html
 
-labelPoints <- function(x) {
+.labelPoints <- function(x) {
 
   # Prepopulate the label point matrix with the centroid values
 	coords <- coordinates(x)

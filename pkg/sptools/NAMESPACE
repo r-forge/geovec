@@ -1,2 +1,2 @@
-import("sp", "raster")
+import("sp")
 exportPattern("^[^\\.]")

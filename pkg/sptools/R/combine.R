@@ -4,6 +4,21 @@
 # Licence GPL v3
 
 
+
+.uniqueNames <- function(x, sep='.') {
+	y <- as.matrix(table(x))
+	y <- y[y[,1] > 1, ,drop=F]
+	if (nrow(y) > 0) {
+		y <- rownames(y)
+		for (i in 1:length(y)) {
+			j <- which(x==y[i])
+			x[j] <- paste(x[j], sep, 1:length(j), sep='')
+		}
+	}
+	x
+}
+
+
 if (!isGeneric("combine")) {
 	setGeneric("combine", function(x, y, ...)
 		standardGeneric("combine"))
@@ -28,7 +43,7 @@ function(x, y, ..., keepnames=FALSE) {
 		}
 
 		ln <- sapply(rwn, length)
-		rnu <- raster:::.uniqueNames(unlist(rwn))
+		rnu <- .uniqueNames(unlist(rwn))
 		end <- cumsum(ln)
 		start <- c(0, end[-length(end)]) + 1
 		for (i in 1:length(x)) {
@@ -104,7 +119,7 @@ setMethod('combine', signature(x='SpatialLines', y='SpatialLines'),
 		}
 
 		ln <- sapply(rwn, length)
-		rnu <- raster:::.uniqueNames(unlist(rwn))
+		rnu <- .uniqueNames(unlist(rwn))
 		end <- cumsum(ln)
 		start <- c(0, end[-length(end)]) + 1
 		for (i in 1:length(x)) {
@@ -180,7 +195,7 @@ setMethod('combine', signature(x='SpatialPoints', y='SpatialPoints'),
 		}
 
 		ln <- sapply(rwn, length)
-		rnu <- raster:::.uniqueNames(unlist(rwn))
+		rnu <- .uniqueNames(unlist(rwn))
 		end <- cumsum(ln)
 		start <- c(0, end[-length(end)]) + 1
 		for (i in 1:length(x)) {
