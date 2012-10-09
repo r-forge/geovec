@@ -1,6 +1,6 @@
 
 if (!isGeneric("erase")) {
-	setGeneric("erase", function(x, y)
+	setGeneric("erase", function(x, y, ...)
 		standardGeneric("erase"))
 }	
 
@@ -35,7 +35,7 @@ if (!isGeneric("erase")) {
 
 
 setMethod(erase, signature(x='SpatialPolygons', y='SpatialPolygons'),
-    function(x, y){ 
+    function(x, y, ...){ 
 	
 		require(rgeos)
 
