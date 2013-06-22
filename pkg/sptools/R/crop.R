@@ -22,11 +22,8 @@ setMethod('crop', signature(x='SpatialPolygons', y='ANY'),
 			}
 			y@proj4string <- x@proj4string		
 		}
-		if (version_GEOS0() < "3.3.0") {
-			y <- gUnionCascaded(y)
-		} else {
-			y <- gUnaryUnion(y)
-		}	
+
+		y <- gUnaryUnion(y)
 		row.names(y) <- '1'
 		rnx <- row.names(x)
 		row.names(x) <- as.character(1:length(rnx))
@@ -81,6 +78,9 @@ setMethod('crop', signature(x='SpatialLines', y='ANY'),
 			y@proj4string <- x@proj4string		
 		}
 		
+		rnx <- row.names(x)
+		row.names(x) <- as.character(1:length(rnx))
+
 		if (.hasSlot(x, 'data')) {
 		
 			# in future versions of rgeos, this intermediate step should not be necessary

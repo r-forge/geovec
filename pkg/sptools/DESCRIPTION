@@ -3,7 +3,7 @@ Type: Package
 Title: Manipulation of geographic object data (points, lines, polygons)
 Version: 0.2-1
 Date: 5-October-2012
-Depends: methods, sp, rgeos (>= 0.1-15), R (>= 2.11.0)
+Depends: methods, sp, raster, rgeos (>= 0.1-15), R (>= 2.11.0)
 Suggests: deldir, rgdal, XML
 Author: Robert J. Hijmans
 Maintainer: Robert J. Hijmans <r.hijmans@gmail.com> 

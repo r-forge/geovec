@@ -12,8 +12,7 @@ setMethod("+", signature(e1='SpatialPolygons', e2='SpatialPolygons'),
 
 setMethod("*", signature(e1='SpatialPolygons', e2='SpatialPolygons'),
     function(e1, e2){ 
-		intersect(e1, d2)
-	}
+		intersect(e1, e2)	}
 )
 
 setMethod("-", signature(e1='SpatialPolygons', e2='SpatialPolygons'),

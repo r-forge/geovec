@@ -14,10 +14,7 @@ if (!isGeneric("ident")) {
 setMethod('ident', signature(x='SpatialPolygons', y='SpatialPolygons'), 
 function(x, y, ...) {
 
-	yy <- list(...)
-	if (is.null(yy)) {
-		return(object)
-	}
+	yy <- list(y, ...)
 
 	i <- which(sapply(yy, function(x) inherits(x, 'SpatialPolygons')))
 	if (length(i)==0) {

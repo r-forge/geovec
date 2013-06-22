@@ -14,12 +14,13 @@ Erase parts of a Spatial* objects with another Spatial* object
 }
 
 \usage{
-\S4method{erase}{SpatialPolygons,SpatialPolygons}(x, y)
+\S4method{erase}{SpatialPolygons,SpatialPolygons}(x, y, ...)
 }
 
 \arguments{
   \item{x}{Spatial* object}
   \item{y}{Spatial* object}
+  \item{...}{Additional arguments (none)}  
 }
 
 \value{

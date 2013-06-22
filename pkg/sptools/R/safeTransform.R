@@ -40,7 +40,7 @@ setMethod ('safeTransform', c('SpatialPolygonsDataFrame', 'CRS'),
 	} )
 	spps <- SpatialPolygons(List, proj4string = CRS(crs))
 	dat <- sl@data
-	dat <- dat[dat$ID1 %in% row.names(spls), ]
+	dat <- dat[dat$ID1 %in% row.names(spps), ]
 	rownames(dat) <- dat$ID1
 	dat$ID1 <- NULL
 	SpatialPolygonsDataFrame(spps, dat)
