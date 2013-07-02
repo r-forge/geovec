@@ -31,18 +31,18 @@ setMethod("xymean", signature(x='SpatialPoints'),
 )	
 
 
-setMethod("xymean", signature(x='RasterLayer'),
-	function(x, w=NULL){
-		if (is.null(w)) {
-			w <- getValues(x)
-		}
-		if (isTRUE(!is.projected(x))) {
-			.xymeanLL(coordinates(x), w=w)
-		} else {
-			.xymean(coordinates(x), w=w)
-		}
-	}
-)	
+#setMethod("xymean", signature(x='RasterLayer'),
+#	function(x, w=NULL){
+#		if (is.null(w)) {
+#			w <- getValues(x)
+#		}
+#		if (isTRUE(!is.projected(x))) {
+#			.xymeanLL(coordinates(x), w=w)
+#		} else {
+#			.xymean(coordinates(x), w=w)
+#		}
+#	}
+#)	
 
 
 .xymean <- function(xy, w=NULL) {
@@ -115,17 +115,17 @@ setMethod("xymedian", signature(x='SpatialPoints'),
 )	
 
 
-setMethod("xymedian", signature(x='RasterLayer'),
-	function(x, w=NULL, converge){
-		if (isTRUE(!is.projected(x))) {	
-			warning('this function should only be used with planar coordinates') 
-		}
-		if (is.null(w)) {
-			w <- getValues(x)
-		}
-		.xymedian(coordinates(x), w=w, converge=converge)
-	}
-)	
+#setMethod("xymedian", signature(x='RasterLayer'),
+#	function(x, w=NULL, converge){
+#		if (isTRUE(!is.projected(x))) {	
+#			warning('this function should only be used with planar coordinates') 
+#		}
+#		if (is.null(w)) {
+#			w <- getValues(x)
+#		}
+#		.xymedian(coordinates(x), w=w, converge=converge)
+#	}
+#)	
 
 
 .xymedian <- function(xy, w=NULL, converge){
