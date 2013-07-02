@@ -26,7 +26,7 @@ function(x, y, ...) {
 
 	haswarned <- FALSE
 	for (y in yy) {
-		if (! identical(projection(x), projection(y)) ) {
+		if (! identical(proj4string(x), proj4string(y)) ) {
 			if (!haswarned) {
 				warning('non identical CRS')
 				haswarned <- TRUE

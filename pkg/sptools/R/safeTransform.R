@@ -9,13 +9,13 @@ if (!isGeneric("safeTransform")) {
 setMethod ('safeTransform', c('SpatialPolygonsDataFrame', 'CRS'),
 	function(x, crs, ...) {
 
-	crs <- projection(crs)
+	crs <- proj4string(crs)
 	sl <- as(x, 'SpatialLinesDataFrame')
 	sl$ID1 <- 1:nrow(sl)
 	sld <- disaggregate(sl)
 	sld$ID2 <- 1:nrow(sld)
 	sp <- as(sld, 'SpatialPointsDataFrame')
-	z <- project(coordinates(sp), projection(crs))
+	z <- project(coordinates(sp), crs)
 	z[!is.finite(z)] <- NA
 	xyz <- na.omit(cbind(z, ID1=sp$ID1, ID2=sp$ID2))
 	zz <- unique(xyz[,3])
@@ -52,12 +52,12 @@ setMethod ('safeTransform', c('SpatialPolygonsDataFrame', 'CRS'),
 setMethod ('safeTransform', c('SpatialLinesDataFrame', 'CRS'),
 	function(x, crs, ...) {
 
-	crs <- projection(crs)
+	crs <- proj4string(crs)
 	x$ID1 <- 1:nrow(x)
 	sld <- disaggregate(x)
 	sld$ID2 <- 1:nrow(sld)
 	sp <- as(sld, 'SpatialPointsDataFrame')
-	z <- project(coordinates(sp), projection(crs))
+	z <- project(coordinates(sp), crs)
 	z[!is.finite(z)] <- NA
 	xyz <- na.omit(cbind(z, ID1=sp$ID1, ID2=sp$ID2))
 	zz <- unique(xyz[,3])

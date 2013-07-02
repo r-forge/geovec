@@ -33,7 +33,7 @@ function(x, y) {
 	x <- spChFIDs(x, as.character(1:length(row.names(x))))
 	y <- spChFIDs(y, as.character(1:length(row.names(y))))
 		
-	if (! identical(projection(x), projection(y)) ) {
+	if (! identical(proj4string(x), proj4string(y)) ) {
 		warning('non identical CRS')
 		y@proj4string <- x@proj4string
 	}	

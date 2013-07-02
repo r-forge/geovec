@@ -4,13 +4,15 @@
 # Licence GPL v3
 
 
-if (!isGeneric("disaggregate")) {
-	setGeneric("disaggregate", function(x, ...)
-		standardGeneric("disaggregate"))
-}
+# this is now in package 'sp'
 
-setMethod('disaggregate', signature(x='SpatialPolygons'), 
-function(x, ...) {
+#if (!isGeneric("disaggregate")) {
+#	setGeneric("disaggregate", function(x, ...)
+#		standardGeneric("disaggregate"))
+#}
+
+#setMethod('disaggregate', signature(x='SpatialPolygons'), 
+.disaggregatePols <- function(x, ...) {
 	n <- length(x@polygons)
 	nn <- vector(length=n)
 	pp <- list()
@@ -44,11 +46,11 @@ function(x, ...) {
 	}
 	return(pp)
 }
-)
+#)
 
 
-setMethod('disaggregate', signature(x='SpatialLines'), 
-function(x, ...) {
+#setMethod('disaggregate', signature(x='SpatialLines'), 
+.disaggregateLines <- function(x, ...) {
 	n <- length(x@lines)
 	nn <- vector(length=n)
 	pp <- list()
@@ -76,4 +78,4 @@ function(x, ...) {
 	}
 	return(pp)
 }
-)
+#)
