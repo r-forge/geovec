@@ -19,7 +19,7 @@ Comparison of terminology for polygon manipulation methods used in ArcGIS and in
   \tab \bold{ArcGIS}    \tab  \bold{sptools} \cr
   \tab Erase     \tab  \code{\link{erase}} or "-" \cr
   \tab Identity  \tab  \code{\link{ident}} \cr
-  \tab Intersect \tab  \code{\link{intersect}} or "*" \cr
+  \tab Intersect \tab  \code{\link{intersect}} or "\*" \cr
   \tab Union     \tab  \code{\link{union}} or "+" \cr
   \tab Update    \tab  \code{\link{update}} \cr
   \tab Symmetrical Difference \tab  \code{\link{symdif}} \cr 
