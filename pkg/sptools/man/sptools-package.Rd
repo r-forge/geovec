@@ -16,23 +16,23 @@ The \code{sptools} package has functions to manipulate geographic vector data. I
 Comparison of terminology for polygon manipulation methods used in ArcGIS and in this package (sptools)
 
 \tabular{rll}{
-  \tab \bold{ArcGIS}    \tab  \bold{raster} \cr
-  \tab Erase     \tab  erase or "-" \cr
-  \tab Identity  \tab  ident \cr
-  \tab Intersect \tab  intersect \cr
-  \tab Union     \tab  union or "+" \cr
-  \tab Update    \tab  update \cr
-  \tab Symmetrical Difference \tab  symdif \cr 
-  \tab Append    \tab  combine \cr
-  \tab Dissolve  \tab  aggregate  \cr
-  \tab Explode   \tab  disaggregate  \cr
-  \tab Join table \tab  merge  \cr
-  \tab Clip      \tab  crop or "*" \cr
-  \tab Select    \tab  select \cr
-  \tab "i"       \tab  click \cr
+  \tab \bold{ArcGIS}    \tab  \bold{sptools} \cr
+  \tab Erase     \tab  \code{\link{erase}} or "-" \cr
+  \tab Identity  \tab  \code{\link{ident}} \cr
+  \tab Intersect \tab  \code{\link{intersect}} \cr
+  \tab Union     \tab  \code{\link{union}} or "+" \cr
+  \tab Update    \tab  \code{\link{update}} \cr
+  \tab Symmetrical Difference \tab  \code{\link{symdif}} \cr 
+  \tab Append    \tab  \code{\link{combine}} \cr
+  \tab Dissolve  \tab  \code{\link{aggregate}}  \cr
+  \tab Explode   \tab  \code{\link[sp]{disaggregate}} (in the \code{sp} package) \cr
+  \tab Join table \tab \code{\link[sp]{merge}} (in the \code{sp}  package) \cr
+  \tab Clip      \tab  \code{\link[raster]{crop}} (in the \code{raster} package) \cr
+  \tab Select    \tab  \code{\link[raster]{select}} (in the \code{raster} package) \cr
+  \tab "i" (identify) \tab  \code{\link[raster]{click}} (in the \code{raster} package) \cr
 }
 
-For spatial-join and other spatial queries, see sp \link[sp]{over}
+For spatial-join and other spatial queries, see \code{\link[sp]{over}} in package the \code{sp} package or \code{\link[raster]{extract}} in the \code{raster} package
 }
 
 

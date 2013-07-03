@@ -32,7 +32,7 @@ SpatialPolygons*
 
 
 \seealso{
-\code{\link{union}}. Use \code{\link{crop}} if you want to intersect a Spatial* object with an Extent object.
+\code{\link{union}}. Use \code{\link[raster]{crop}} if you want to intersect a Spatial* object with an Extent object.
 }
 
 
