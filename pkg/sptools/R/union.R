@@ -22,7 +22,9 @@ function(x, y) {
 	subs <- gIntersects(x, y, byid=TRUE)
 	
 	if (!any(subs)) {
+	
 		x <- combine(x, y)
+		
 	} else {
 	
 		xdata <- .hasSlot(x, 'data')
@@ -39,7 +41,12 @@ function(x, y) {
 		if (!is.null(dif1) | !is.null(dif2)) {
 			x <- combine(dif1, x, dif2) 
 		} 
-	} 	
+		
+		# remove slivers
+		area <- sapply(x@polygons, function(i) slot(i, 'area'))
+		x <- x[area > 0, ]
+	}
+	x
 }
 )
 

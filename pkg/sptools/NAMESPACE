@@ -1,2 +1,3 @@
-import("sp")
+import(sp)
+import(rgeos)
 exportPattern("^[^\\.]")
